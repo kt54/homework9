@@ -1,10 +1,7 @@
 
 from flask import Flask
-
 from flask import render_template
-
 import random
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,4 +11,4 @@ def quotes():
         a=fp.readlines()
     ran=random.randint(0,len(a)-1)
     quote=a[ran].replace('\n','')
-    return render_template('quotes.html', quote=quote)
+    return render_template('template.html', quote=quote)
